@@ -6,15 +6,26 @@ angular.module('shortly.services', [])
     getAll: function () {
       return $http({
         method: 'GET',
-        url: 'api/links',
-        data: links
+        url: '/api/links'
       })
       .then(function (response) {
-        return response.status(200);  
+        console.log('Is response.data really a thing?: ', response.data);
+        return response.data;  
       });
     },
 
-    addOne: function () {}
+    addOne: function (link) {
+      console.log('addOne was called...');
+      return $http({
+        method: 'POST',
+        url: '/api/links',
+        data: link
+      })
+      .then(function (response) {
+        console.log('AAANNDDD were getting into the "then".');
+        return response;
+      });  
+    }
   };
 })
 .factory('Auth', function ($http, $location, $window) {
