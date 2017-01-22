@@ -1,3 +1,20 @@
+<div class="navigation">
+  <ul>
+    <li><a href="" class="selected">Links</a></li>
+    <li><a href="">Shorten</a></li>
+  </ul>  
+</div>  
 <div id='container' ng-controller='LinksController'>
-
+  <!-- <div class="link" ng-model="newLink"> -->
+    <img src='../assets/redirect_icon.png'/>
+    <div class='info'>
+      <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
+      <div class='title'>{{$scope.data.links.title}}</div>
+      <div class='original'>{{url}}</div>
+      <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+    </div>
+  <!-- </div> -->
+  <pre>
+    {{$scope.data.links}}
+  </pre>
 </div>
